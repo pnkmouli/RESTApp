@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8579bfec32f48969c399cb6e8ac61c0" Name="Diagram1">
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ApplicantGender" Width="1.5" PointX="0.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ApplicantTitle" Width="1.5" PointX="2.625" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.Basket" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.BasketItem" Width="1.5" PointX="8.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.DevelopmentGroup" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ExportConfig" Width="1.5" PointX="5.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ExportMedia" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ExportMediaLog" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ExportProcessed" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.FurnishedType" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.ImportType" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.Office" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyAlert" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyAlertsProcessed" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyCategory" Width="1.5" PointX="0.75" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyClientType" Width="1.5" PointX="0.75" PointY="37.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyEstateClientType" Width="1.5" PointX="5.25" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyEstate" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyEstateType" Width="1.5" PointX="8.25" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyFile" Width="1.5" PointX="10.125" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyFileType" Width="1.5" PointX="11.375" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyImage" Width="1.5" PointX="8.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyImageType" Width="1.5" PointX="10.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyImportProcess" Width="1.5" PointX="3" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyLettingSpecification" Width="1.5" PointX="10.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyOption" Width="1.5" PointX="5.25" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyRoom" Width="1.5" PointX="5.25" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyStatu" Width="1.5" PointX="0.75" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyStyle" Width="1.5" PointX="8.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertySurvey" Width="1.5" PointX="6" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyTypeGroup" Width="1.5" PointX="12.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.PropertyType" Width="1.5" PointX="0.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.Region" Width="1.5" PointX="0.75" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.Shortlist" Width="1.5" PointX="10.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.sysdiagram" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.Tracking" Width="1.5" PointX="10.375" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.TrackingType" Width="1.5" PointX="8.375" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WaltonPropertiesModel.WindowCard" Width="1.5" PointX="5.25" PointY="49.125" IsExpanded="true" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_Basket_ApplicantTitle" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_Basket_FriendTitle" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyAlert_PropertyAlert" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_BasketItems_Basket" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_BasketItems_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_DevelopmentGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_ExportConfig_ExportMedia" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_ExportMediaLog_ExportMedia" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_ExportProcessed_ExportMedia" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_ExportMediaLog_ExportProcessed" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_ExportMediaLog_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_FurnishedType" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_ImportType" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyImportProcesses_ImportType" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_offices" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertySurvey_offices" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyAlertsProcessed_PropertyAlert" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_PropertyCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_propertystatus_PropertyCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstateClientTypes_PropertyClientType" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_PropertyClientType" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstateClientTypes_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_propertystatus" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_propertytypes" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstates_regions" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstateTypes_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyFiles_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyOptions_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyRooms_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_WindowCards_PropertyEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertyEstateTypes_PropertyTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_propertyFiles_propertyfiletype" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_PropertySurvey_propertytypes" ManuallyRouted="false" />
+        <AssociationConnector Association="WaltonPropertiesModel.FK_tracking_trackingtypes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

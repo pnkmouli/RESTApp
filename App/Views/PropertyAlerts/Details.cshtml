@@ -1,0 +1,251 @@
+﻿@model Domain.PropertyAlert
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PropertyAlert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Forename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Forename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyTypeIDs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyTypeIDs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyTypeTitles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyTypeTitles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinBedrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinBedrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxBedrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxBedrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Radius)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Radius)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubscriptionStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubscriptionStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubscriptionExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubscriptionExpiryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubscriptionCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubscriptionCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateProcessed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateProcessed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PPPW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PPPW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Portfolios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Portfolios)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Terms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Terms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SortOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SortOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAlert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAlert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicantTitle.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicantTitle.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

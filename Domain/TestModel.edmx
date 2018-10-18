@@ -1,0 +1,3138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WaltonPropertiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ApplicantGender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApplicantTitle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SessionId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Message" Type="text" />
+          <Property Name="TitleId" Type="int" />
+          <Property Name="Forename" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="Companyname" Type="varchar" MaxLength="100" />
+          <Property Name="Telephone" Type="varchar" MaxLength="15" />
+          <Property Name="Mobile" Type="varchar" MaxLength="15" />
+          <Property Name="Address1" Type="varchar" MaxLength="100" />
+          <Property Name="Address2" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="County" Type="varchar" MaxLength="50" />
+          <Property Name="Postcode" Type="varchar" MaxLength="20" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="HeardAboutUs" Type="int" />
+          <Property Name="Dob" Type="date" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="7" />
+          <Property Name="KeepInTouch" Type="bit" />
+          <Property Name="FriendTitleId" Type="int" />
+          <Property Name="FriendForename" Type="nvarchar" MaxLength="50" />
+          <Property Name="FriendSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="FriendEmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="FriendContactNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="EmailToFriend" Type="bit" />
+        </EntityType>
+        <EntityType Name="BasketItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BasketId" Type="int" Nullable="false" />
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="OiginalPrice" Type="money" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Deposit" Type="money" />
+          <Property Name="AdminFee" Type="money" />
+          <Property Name="Title" Type="int" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="150" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="150" />
+          <Property Name="Town" Type="nvarchar" MaxLength="150" />
+          <Property Name="County" Type="nvarchar" MaxLength="150" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="10" />
+          <Property Name="CountryId" Type="int" />
+        </EntityType>
+        <EntityType Name="DevelopmentGroups">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="HouseNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="150" />
+          <Property Name="City" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="County" Type="nvarchar" MaxLength="150" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Logo" Type="nvarchar" MaxLength="150" />
+          <Property Name="HeaderImage" Type="nvarchar" MaxLength="150" />
+          <Property Name="Details" Type="ntext" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="15" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="URL" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ExportConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExportMediaID" Type="int" />
+          <Property Name="PropertyCategoryList" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MinimumPrice" Type="money" />
+          <Property Name="MaximumPrice" Type="money" />
+          <Property Name="MinimumBedrooms" Type="int" />
+          <Property Name="MaximumBedrooms" Type="int" />
+          <Property Name="PropertyClientTypeList" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyTypeList" Type="nvarchar" MaxLength="100" />
+          <Property Name="SearchTypeList" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUploadDate" Type="datetime" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="DisplayCategoryTypes" Type="bit" Nullable="false" />
+          <Property Name="DisplayClientTypes" Type="bit" Nullable="false" />
+          <Property Name="DisplayPropertyTypes" Type="bit" Nullable="false" />
+          <Property Name="DisplayMinBedrooms" Type="bit" Nullable="false" />
+          <Property Name="DisplayMaxBedrooms" Type="bit" Nullable="false" />
+          <Property Name="AllowMultipleCategoryTypes" Type="bit" Nullable="false" />
+          <Property Name="RightMoveChannel" Type="int" />
+          <Property Name="RightMoveAgentRef" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ExportMedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ExportType" Type="int" Nullable="false" />
+          <Property Name="ApiUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="FtpAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="Username" Type="nvarchar" MaxLength="150" />
+          <Property Name="Password" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExportMediaLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExportMediaID" Type="int" />
+          <Property Name="PropertyID" Type="int" />
+          <Property Name="BranchID" Type="nvarchar" MaxLength="20" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="APIReference" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="SuccessResponse" Type="bit" />
+          <Property Name="ChangeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExportProcessID" Type="int" />
+        </EntityType>
+        <EntityType Name="ExportProcessed">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MediaID" Type="int" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Running" Type="bit" />
+          <Property Name="Manual" Type="bit" />
+          <Property Name="AdditionalDetails" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FurnishedType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VebraId" Type="int" />
+          <Property Name="GeminiId" Type="int" />
+        </EntityType>
+        <EntityType Name="ImportType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="ProcessName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Offices">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchid" Type="int" Nullable="false" />
+          <Property Name="officename" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="address1" Type="varchar" MaxLength="100" />
+          <Property Name="address2" Type="varchar" MaxLength="100" />
+          <Property Name="towncity" Type="varchar" MaxLength="100" />
+          <Property Name="county" Type="varchar" MaxLength="150" />
+          <Property Name="postcode" Type="varchar" MaxLength="15" />
+          <Property Name="telephone" Type="varchar" MaxLength="20" />
+          <Property Name="telephoneLet" Type="varchar" MaxLength="20" />
+          <Property Name="fax" Type="varchar" MaxLength="20" />
+          <Property Name="image" Type="varchar" MaxLength="20" />
+          <Property Name="emailaddress" Type="varchar" MaxLength="150" />
+          <Property Name="salesemailaddress" Type="varchar" MaxLength="150" />
+          <Property Name="priority" Type="int" />
+          <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyAlert">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="int" Nullable="false" />
+          <Property Name="Forename" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyTypeIDs" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyTypeTitles" Type="nvarchar" MaxLength="250" />
+          <Property Name="MinPrice" Type="float" />
+          <Property Name="MaxPrice" Type="float" />
+          <Property Name="MinBedrooms" Type="int" />
+          <Property Name="MaxBedrooms" Type="int" />
+          <Property Name="Location" Type="nvarchar" MaxLength="150" />
+          <Property Name="Radius" Type="float" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="SubscriptionStartDate" Type="datetime" Nullable="false" />
+          <Property Name="SubscriptionExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="SubscriptionCode" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateProcessed" Type="datetime" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="PPPW" Type="bit" />
+          <Property Name="PCM" Type="bit" />
+          <Property Name="Portfolios" Type="bit" />
+          <Property Name="Terms" Type="bit" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="ClientType" Type="int" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="IsAlert" Type="bit" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PropertyAlertsProcessed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyAlertID" Type="int" Nullable="false" />
+          <Property Name="DateAlertSent" Type="datetime" />
+          <Property Name="PropertyID" Type="int" />
+          <Property Name="priceend" Type="float" />
+          <Property Name="pricePCM" Type="float" />
+        </EntityType>
+        <EntityType Name="PropertyCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyClientType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="isSale" Type="bit" Nullable="false" />
+          <Property Name="isLet" Type="bit" Nullable="false" />
+          <Property Name="isNewHomes" Type="bit" Nullable="false" />
+          <Property Name="isInvestment" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyEstateClientTypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="ClientTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyEstates">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vebraid" Type="int" />
+          <Property Name="importedsource" Type="int" />
+          <Property Name="ExpertAgentRef" Type="nvarchar" MaxLength="50" />
+          <Property Name="agentref" Type="varchar" MaxLength="50" />
+          <Property Name="developmentid" Type="int" />
+          <Property Name="propertytypeid" Type="int" />
+          <Property Name="categoryid" Type="int" />
+          <Property Name="clienttypeid" Type="int" />
+          <Property Name="housename" Type="varchar" MaxLength="200" />
+          <Property Name="housenumber" Type="varchar" MaxLength="20" />
+          <Property Name="fulladdress" Type="varchar" MaxLength="250" />
+          <Property Name="address1" Type="varchar" MaxLength="200" />
+          <Property Name="address2" Type="varchar" MaxLength="200" />
+          <Property Name="towncity" Type="varchar" MaxLength="200" />
+          <Property Name="county" Type="varchar" MaxLength="50" />
+          <Property Name="postcode" Type="varchar" MaxLength="15" />
+          <Property Name="postcode1" Type="varchar" MaxLength="5" />
+          <Property Name="postcode2" Type="varchar" MaxLength="5" />
+          <Property Name="regionid" Type="tinyint" />
+          <Property Name="coastal" Type="bit" Nullable="false" />
+          <Property Name="equestrian" Type="bit" Nullable="false" />
+          <Property Name="mainimage" Type="varchar" MaxLength="150" />
+          <Property Name="shortdescription" Type="varchar" MaxLength="2000" />
+          <Property Name="longdescription" Type="ntext" />
+          <Property Name="roominformation" Type="ntext" />
+          <Property Name="footer" Type="varchar" MaxLength="3000" />
+          <Property Name="pricestart" Type="money" Nullable="false" />
+          <Property Name="priceend" Type="money" />
+          <Property Name="pricePCM" Type="money" />
+          <Property Name="pricetext" Type="varchar" MaxLength="50" />
+          <Property Name="offersInExcess" Type="bit" Nullable="false" />
+          <Property Name="bedrooms" Type="int" Nullable="false" />
+          <Property Name="receptions" Type="int" Nullable="false" />
+          <Property Name="bathrooms" Type="int" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="officeid" Type="int" Nullable="false" />
+          <Property Name="propertystatusid" Type="int" />
+          <Property Name="propertydate" Type="smalldatetime" />
+          <Property Name="dateadded" Type="smalldatetime" Nullable="false" />
+          <Property Name="israre" Type="bit" />
+          <Property Name="energydocument" Type="varchar" MaxLength="50" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+          <Property Name="latitudeInDegrees" Type="float" />
+          <Property Name="longitudeInDegrees" Type="float" />
+          <Property Name="onlineenquiries" Type="int" />
+          <Property Name="lastvieweddate" Type="smalldatetime" />
+          <Property Name="video" Type="varchar" MaxLength="1000" />
+          <Property Name="videodescription" Type="varchar" MaxLength="500" />
+          <Property Name="floorplan" Type="varchar" MaxLength="100" />
+          <Property Name="HasImage" Type="bit" />
+          <Property Name="Tour" Type="bit" />
+          <Property Name="Furnished" Type="int" Nullable="false" />
+          <Property Name="locality" Type="varchar" MaxLength="250" />
+          <Property Name="priceispcm" Type="bit" Nullable="false" />
+          <Property Name="displayprice" Type="bit" Nullable="false" />
+          <Property Name="displayaddress" Type="varchar" MaxLength="250" />
+          <Property Name="vebra360" Type="varchar" MaxLength="250" />
+          <Property Name="IsImported" Type="bit" Nullable="false" />
+          <Property Name="isNew" Type="bit" />
+          <Property Name="LetDeposit" Type="money" />
+          <Property Name="LetAgencyFee" Type="money" />
+          <Property Name="FixedDeposit" Type="bit" />
+          <Property Name="EPCEnergyCurrent" Type="int" />
+          <Property Name="EPCEnergyPotential" Type="int" />
+          <Property Name="EPCCo2Current" Type="int" />
+          <Property Name="EPCCo2Potential" Type="int" />
+          <Property Name="IsFeatured" Type="bit" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="DoNotExport" Type="bit" />
+          <Property Name="DoNotImportData" Type="bit" />
+          <Property Name="PropertyEndDate" Type="smalldatetime" />
+          <Property Name="Portfolio" Type="bit" />
+        </EntityType>
+        <EntityType Name="PropertyEstateTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="PropertyTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyFiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="filename" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="originalfilename" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FileType" Type="int" Nullable="false" />
+          <Property Name="priority" Type="int" />
+          <Property Name="caption" Type="varchar" MaxLength="100" />
+          <Property Name="dateupdated" Type="datetime" />
+          <Property Name="dateadded" Type="datetime" />
+          <Property Name="VebraURL" Type="varchar" MaxLength="255" />
+          <Property Name="active" Type="bit" />
+          <Property Name="IsImported" Type="bit" />
+          <Property Name="importedsource" Type="int" />
+          <Property Name="FileExistOnFeed" Type="bit" />
+        </EntityType>
+        <EntityType Name="PropertyFileType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vebraid" Type="int" Nullable="false" />
+          <Property Name="filetype" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="download" Type="bit" Nullable="false" />
+          <Property Name="ExpertAgentFileType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExpertAgentID" Type="int" />
+          <Property Name="RightMoveID" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyImages">
+          <Key>
+            <PropertyRef Name="imageid" />
+          </Key>
+          <Property Name="imageid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="room" Type="varchar" MaxLength="100" />
+          <Property Name="image" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="priority" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyImageType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vebraid" Type="int" Nullable="false" />
+          <Property Name="imagetype" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyImportProcesses">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImportSourse" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="IsRunning" Type="bit" Nullable="false" />
+          <Property Name="IsManualProcess" Type="bit" Nullable="false" />
+          <Property Name="Notes" Type="ntext" />
+        </EntityType>
+        <EntityType Name="PropertyLettingSpecifications">
+          <Key>
+            <PropertyRef Name="propertyid" />
+            <PropertyRef Name="specificationid" />
+          </Key>
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="specificationid" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyOptions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="Options" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="MetricSize" Type="nvarchar" MaxLength="250" />
+          <Property Name="Optiontype" Type="int" Nullable="false" />
+          <Property Name="IsImported" Type="bit" Nullable="false" />
+          <Property Name="importedsource" Type="int" />
+          <Property Name="FieldId" Type="int" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="PropertyRooms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="priority" Type="int" />
+          <Property Name="title" Type="varchar" MaxLength="255" />
+          <Property Name="imperial" Type="varchar" MaxLength="50" />
+          <Property Name="metric" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="dimensions" Type="varchar" MaxLength="50" />
+          <Property Name="fileindex" Type="int" />
+          <Property Name="isImported" Type="bit" Nullable="false" />
+          <Property Name="importedsource" Type="int" />
+          <Property Name="active" Type="bit" />
+        </EntityType>
+        <EntityType Name="PropertyStatus">
+          <Key>
+            <PropertyRef Name="propertystatusid" />
+          </Key>
+          <Property Name="propertystatusid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="priority" Type="int" Nullable="false" />
+          <Property Name="catid" Type="int" Nullable="false" />
+          <Property Name="vebraid" Type="int" Nullable="false" />
+          <Property Name="ExpertAgentID" Type="int" />
+          <Property Name="Tag" Type="bit" />
+          <Property Name="RightmoveStatus" Type="int" />
+          <Property Name="ZooplaStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyStyles">
+          <Key>
+            <PropertyRef Name="propertyid" />
+          </Key>
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="styleid" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertySurvey">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Forename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BesttimeToCall" Type="varchar" MaxLength="50" />
+          <Property Name="AlternativeTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="BesttimeToCall1" Type="varchar" MaxLength="50" />
+          <Property Name="Mobilenumber" Type="varchar" MaxLength="50" />
+          <Property Name="PropertyTypeID" Type="int" Nullable="false" />
+          <Property Name="PropertyAge" Type="varchar" MaxLength="20" />
+          <Property Name="PropertyPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Bedrooms" Type="int" />
+          <Property Name="Address1" Type="varchar" MaxLength="150" />
+          <Property Name="Address2" Type="varchar" MaxLength="150" />
+          <Property Name="Town" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Postcode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="County" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Valuation" Type="bit" />
+          <Property Name="Survey" Type="bit" />
+          <Property Name="EPC" Type="bit" />
+          <Property Name="OfficeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyTypeGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Priority" Type="int" Nullable="false" />
+          <Property Name="IsSale" Type="bit" Nullable="false" />
+          <Property Name="IsLet" Type="bit" Nullable="false" />
+          <Property Name="IsNewHomes" Type="bit" Nullable="false" />
+          <Property Name="IsInvestment" Type="bit" Nullable="false" />
+          <Property Name="SubType" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyTypes">
+          <Key>
+            <PropertyRef Name="propertytypeid" />
+          </Key>
+          <Property Name="propertytypeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Typeid" Type="int" />
+          <Property Name="groupid1" Type="int" />
+          <Property Name="groupid2" Type="int" />
+          <Property Name="groupid3" Type="int" />
+          <Property Name="isClientType" Type="bit" />
+          <Property Name="RightMoveID" Type="int" />
+        </EntityType>
+        <EntityType Name="Regions">
+          <Key>
+            <PropertyRef Name="regionid" />
+          </Key>
+          <Property Name="regionid" Type="tinyint" Nullable="false" />
+          <Property Name="region" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="priority" Type="tinyint" Nullable="false" />
+          <Property Name="zdescription" Type="text" />
+          <Property Name="zimage" Type="varchar" MaxLength="50" />
+          <Property Name="zhits" Type="int" />
+        </EntityType>
+        <EntityType Name="Shortlist">
+          <Key>
+            <PropertyRef Name="vipid" />
+            <PropertyRef Name="propertyid" />
+          </Key>
+          <Property Name="vipid" Type="int" Nullable="false" />
+          <Property Name="propertyid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="trackingid" />
+          </Key>
+          <Property Name="trackingid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="trackingtypeid" Type="tinyint" Nullable="false" />
+          <Property Name="propertyid" Type="int" Nullable="false" />
+          <Property Name="vipid" Type="int" />
+          <Property Name="trackingdate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TrackingTypes">
+          <Key>
+            <PropertyRef Name="trackingtypeid" />
+          </Key>
+          <Property Name="trackingtypeid" Type="tinyint" Nullable="false" />
+          <Property Name="trackingtype" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WindowCards">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Price" Type="nvarchar" MaxLength="12" />
+          <Property Name="Location" Type="nvarchar" MaxLength="150" />
+          <Property Name="Details" Type="ntext" />
+          <Property Name="ContactNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="FooterText" Type="ntext" />
+          <Property Name="URL" Type="nvarchar" MaxLength="250" />
+          <Property Name="PropertyId" Type="int" />
+          <Property Name="Template" Type="nvarchar" MaxLength="150" />
+          <Property Name="BackGroundImage" Type="nvarchar" MaxLength="150" />
+          <Property Name="PropertyImage" Type="nvarchar" MaxLength="150" />
+          <Property Name="ShortlistKey" Type="nvarchar" MaxLength="150" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Basket_ApplicantTitle">
+          <End Role="ApplicantTitle" Type="Self.ApplicantTitle" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicantTitle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="TitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_FriendTitle">
+          <End Role="ApplicantTitle" Type="Self.ApplicantTitle" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicantTitle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="FriendTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItems_Basket">
+          <End Role="Basket" Type="Self.Basket" Multiplicity="1" />
+          <End Role="BasketItems" Type="Self.BasketItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketItems">
+              <PropertyRef Name="BasketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItems_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="1" />
+          <End Role="BasketItems" Type="Self.BasketItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BasketItems">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportConfig_ExportMedia">
+          <End Role="ExportMedia" Type="Self.ExportMedia" Multiplicity="0..1" />
+          <End Role="ExportConfig" Type="Self.ExportConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportMedia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportConfig">
+              <PropertyRef Name="ExportMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportMediaLog_ExportMedia">
+          <End Role="ExportMedia" Type="Self.ExportMedia" Multiplicity="0..1" />
+          <End Role="ExportMediaLog" Type="Self.ExportMediaLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportMedia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportMediaLog">
+              <PropertyRef Name="ExportMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportMediaLog_ExportProcessed">
+          <End Role="ExportProcessed" Type="Self.ExportProcessed" Multiplicity="0..1" />
+          <End Role="ExportMediaLog" Type="Self.ExportMediaLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportProcessed">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportMediaLog">
+              <PropertyRef Name="ExportProcessID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportMediaLog_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="0..1" />
+          <End Role="ExportMediaLog" Type="Self.ExportMediaLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ExportMediaLog">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportProcessed_ExportMedia">
+          <End Role="ExportMedia" Type="Self.ExportMedia" Multiplicity="0..1" />
+          <End Role="ExportProcessed" Type="Self.ExportProcessed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportMedia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportProcessed">
+              <PropertyRef Name="MediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyAlert_PropertyAlert">
+          <End Role="ApplicantTitle" Type="Self.ApplicantTitle" Multiplicity="1" />
+          <End Role="PropertyAlert" Type="Self.PropertyAlert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicantTitle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyAlert">
+              <PropertyRef Name="Title" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyAlertsProcessed_PropertyAlert">
+          <End Role="PropertyAlert" Type="Self.PropertyAlert" Multiplicity="1" />
+          <End Role="PropertyAlertsProcessed" Type="Self.PropertyAlertsProcessed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyAlert">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyAlertsProcessed">
+              <PropertyRef Name="PropertyAlertID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateClientTypes_PropertyClientType">
+          <End Role="PropertyClientType" Type="Self.PropertyClientType" Multiplicity="1" />
+          <End Role="PropertyEstateClientTypes" Type="Self.PropertyEstateClientTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyClientType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropertyEstateClientTypes">
+              <PropertyRef Name="ClientTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateClientTypes_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="1" />
+          <End Role="PropertyEstateClientTypes" Type="Self.PropertyEstateClientTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstateClientTypes">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_DevelopmentGroups">
+          <End Role="DevelopmentGroups" Type="Self.DevelopmentGroups" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DevelopmentGroups">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="developmentid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_FurnishedType">
+          <End Role="FurnishedType" Type="Self.FurnishedType" Multiplicity="1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FurnishedType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="Furnished" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_ImportType">
+          <End Role="ImportType" Type="Self.ImportType" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="importedsource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_offices">
+          <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="officeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_PropertyCategory">
+          <End Role="PropertyCategory" Type="Self.PropertyCategory" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_PropertyClientType">
+          <End Role="PropertyClientType" Type="Self.PropertyClientType" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyClientType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="clienttypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_propertystatus">
+          <End Role="PropertyStatus" Type="Self.PropertyStatus" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyStatus">
+              <PropertyRef Name="propertystatusid" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="propertystatusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_propertytypes">
+          <End Role="PropertyTypes" Type="Self.PropertyTypes" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="propertytypeid" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="propertytypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_regions">
+          <End Role="Regions" Type="Self.Regions" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="regionid" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="regionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateTypes_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="1" />
+          <End Role="PropertyEstateTypes" Type="Self.PropertyEstateTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstateTypes">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateTypes_PropertyTypes">
+          <End Role="PropertyTypes" Type="Self.PropertyTypes" Multiplicity="1" />
+          <End Role="PropertyEstateTypes" Type="Self.PropertyEstateTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="propertytypeid" />
+            </Principal>
+            <Dependent Role="PropertyEstateTypes">
+              <PropertyRef Name="PropertyTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyFiles_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="1" />
+          <End Role="PropertyFiles" Type="Self.PropertyFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyFiles">
+              <PropertyRef Name="propertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_propertyFiles_propertyfiletype">
+          <End Role="PropertyFileType" Type="Self.PropertyFileType" Multiplicity="1" />
+          <End Role="PropertyFiles" Type="Self.PropertyFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyFileType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyFiles">
+              <PropertyRef Name="FileType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyImportProcesses_ImportType">
+          <End Role="ImportType" Type="Self.ImportType" Multiplicity="1" />
+          <End Role="PropertyImportProcesses" Type="Self.PropertyImportProcesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyImportProcesses">
+              <PropertyRef Name="ImportSourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyOptions_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="1" />
+          <End Role="PropertyOptions" Type="Self.PropertyOptions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyOptions">
+              <PropertyRef Name="propertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyRooms_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="1" />
+          <End Role="PropertyRooms" Type="Self.PropertyRooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyRooms">
+              <PropertyRef Name="propertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_propertystatus_PropertyCategory">
+          <End Role="PropertyCategory" Type="Self.PropertyCategory" Multiplicity="1" />
+          <End Role="PropertyStatus" Type="Self.PropertyStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyStatus">
+              <PropertyRef Name="catid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertySurvey_offices">
+          <End Role="Offices" Type="Self.Offices" Multiplicity="1" />
+          <End Role="PropertySurvey" Type="Self.PropertySurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertySurvey">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertySurvey_propertytypes">
+          <End Role="PropertyTypes" Type="Self.PropertyTypes" Multiplicity="1" />
+          <End Role="PropertySurvey" Type="Self.PropertySurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="propertytypeid" />
+            </Principal>
+            <Dependent Role="PropertySurvey">
+              <PropertyRef Name="PropertyTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tracking_trackingtypes">
+          <End Role="TrackingTypes" Type="Self.TrackingTypes" Multiplicity="1" />
+          <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrackingTypes">
+              <PropertyRef Name="trackingtypeid" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="trackingtypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WindowCards_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstates" Multiplicity="0..1" />
+          <End Role="WindowCards" Type="Self.WindowCards" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="WindowCards">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WaltonPropertiesModelStoreContainer">
+          <EntitySet Name="ApplicantGender" EntityType="Self.ApplicantGender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ApplicantTitle" EntityType="Self.ApplicantTitle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BasketItems" EntityType="Self.BasketItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DevelopmentGroups" EntityType="Self.DevelopmentGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExportConfig" EntityType="Self.ExportConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExportMedia" EntityType="Self.ExportMedia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExportMediaLog" EntityType="Self.ExportMediaLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExportProcessed" EntityType="Self.ExportProcessed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FurnishedType" EntityType="Self.FurnishedType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImportType" EntityType="Self.ImportType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offices" EntityType="Self.Offices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyAlert" EntityType="Self.PropertyAlert" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyAlertsProcessed" EntityType="Self.PropertyAlertsProcessed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyCategory" EntityType="Self.PropertyCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyClientType" EntityType="Self.PropertyClientType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyEstateClientTypes" EntityType="Self.PropertyEstateClientTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyEstates" EntityType="Self.PropertyEstates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyEstateTypes" EntityType="Self.PropertyEstateTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyFiles" EntityType="Self.PropertyFiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyFileType" EntityType="Self.PropertyFileType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyImages" EntityType="Self.PropertyImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyImageType" EntityType="Self.PropertyImageType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyImportProcesses" EntityType="Self.PropertyImportProcesses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyLettingSpecifications" EntityType="Self.PropertyLettingSpecifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyOptions" EntityType="Self.PropertyOptions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyRooms" EntityType="Self.PropertyRooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyStatus" EntityType="Self.PropertyStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyStyles" EntityType="Self.PropertyStyles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertySurvey" EntityType="Self.PropertySurvey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyTypeGroup" EntityType="Self.PropertyTypeGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyTypes" EntityType="Self.PropertyTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regions" EntityType="Self.Regions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shortlist" EntityType="Self.Shortlist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tracking" EntityType="Self.Tracking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrackingTypes" EntityType="Self.TrackingTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WindowCards" EntityType="Self.WindowCards" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Basket_ApplicantTitle" Association="Self.FK_Basket_ApplicantTitle">
+            <End Role="ApplicantTitle" EntitySet="ApplicantTitle" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_FriendTitle" Association="Self.FK_Basket_FriendTitle">
+            <End Role="ApplicantTitle" EntitySet="ApplicantTitle" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItems_Basket" Association="Self.FK_BasketItems_Basket">
+            <End Role="Basket" EntitySet="Basket" />
+            <End Role="BasketItems" EntitySet="BasketItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItems_PropertyEstates" Association="Self.FK_BasketItems_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="BasketItems" EntitySet="BasketItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportConfig_ExportMedia" Association="Self.FK_ExportConfig_ExportMedia">
+            <End Role="ExportMedia" EntitySet="ExportMedia" />
+            <End Role="ExportConfig" EntitySet="ExportConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportMediaLog_ExportMedia" Association="Self.FK_ExportMediaLog_ExportMedia">
+            <End Role="ExportMedia" EntitySet="ExportMedia" />
+            <End Role="ExportMediaLog" EntitySet="ExportMediaLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportMediaLog_ExportProcessed" Association="Self.FK_ExportMediaLog_ExportProcessed">
+            <End Role="ExportProcessed" EntitySet="ExportProcessed" />
+            <End Role="ExportMediaLog" EntitySet="ExportMediaLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportMediaLog_PropertyEstates" Association="Self.FK_ExportMediaLog_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="ExportMediaLog" EntitySet="ExportMediaLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportProcessed_ExportMedia" Association="Self.FK_ExportProcessed_ExportMedia">
+            <End Role="ExportMedia" EntitySet="ExportMedia" />
+            <End Role="ExportProcessed" EntitySet="ExportProcessed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyAlert_PropertyAlert" Association="Self.FK_PropertyAlert_PropertyAlert">
+            <End Role="ApplicantTitle" EntitySet="ApplicantTitle" />
+            <End Role="PropertyAlert" EntitySet="PropertyAlert" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyAlertsProcessed_PropertyAlert" Association="Self.FK_PropertyAlertsProcessed_PropertyAlert">
+            <End Role="PropertyAlert" EntitySet="PropertyAlert" />
+            <End Role="PropertyAlertsProcessed" EntitySet="PropertyAlertsProcessed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateClientTypes_PropertyClientType" Association="Self.FK_PropertyEstateClientTypes_PropertyClientType">
+            <End Role="PropertyClientType" EntitySet="PropertyClientType" />
+            <End Role="PropertyEstateClientTypes" EntitySet="PropertyEstateClientTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateClientTypes_PropertyEstates" Association="Self.FK_PropertyEstateClientTypes_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyEstateClientTypes" EntitySet="PropertyEstateClientTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_DevelopmentGroups" Association="Self.FK_PropertyEstates_DevelopmentGroups">
+            <End Role="DevelopmentGroups" EntitySet="DevelopmentGroups" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_FurnishedType" Association="Self.FK_PropertyEstates_FurnishedType">
+            <End Role="FurnishedType" EntitySet="FurnishedType" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_ImportType" Association="Self.FK_PropertyEstates_ImportType">
+            <End Role="ImportType" EntitySet="ImportType" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_offices" Association="Self.FK_PropertyEstates_offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_PropertyCategory" Association="Self.FK_PropertyEstates_PropertyCategory">
+            <End Role="PropertyCategory" EntitySet="PropertyCategory" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_PropertyClientType" Association="Self.FK_PropertyEstates_PropertyClientType">
+            <End Role="PropertyClientType" EntitySet="PropertyClientType" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_propertystatus" Association="Self.FK_PropertyEstates_propertystatus">
+            <End Role="PropertyStatus" EntitySet="PropertyStatus" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_propertytypes" Association="Self.FK_PropertyEstates_propertytypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_regions" Association="Self.FK_PropertyEstates_regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateTypes_PropertyEstates" Association="Self.FK_PropertyEstateTypes_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyEstateTypes" EntitySet="PropertyEstateTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateTypes_PropertyTypes" Association="Self.FK_PropertyEstateTypes_PropertyTypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="PropertyEstateTypes" EntitySet="PropertyEstateTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyFiles_PropertyEstates" Association="Self.FK_PropertyFiles_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyFiles" EntitySet="PropertyFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_propertyFiles_propertyfiletype" Association="Self.FK_propertyFiles_propertyfiletype">
+            <End Role="PropertyFileType" EntitySet="PropertyFileType" />
+            <End Role="PropertyFiles" EntitySet="PropertyFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyImportProcesses_ImportType" Association="Self.FK_PropertyImportProcesses_ImportType">
+            <End Role="ImportType" EntitySet="ImportType" />
+            <End Role="PropertyImportProcesses" EntitySet="PropertyImportProcesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyOptions_PropertyEstates" Association="Self.FK_PropertyOptions_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyOptions" EntitySet="PropertyOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyRooms_PropertyEstates" Association="Self.FK_PropertyRooms_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyRooms" EntitySet="PropertyRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_propertystatus_PropertyCategory" Association="Self.FK_propertystatus_PropertyCategory">
+            <End Role="PropertyCategory" EntitySet="PropertyCategory" />
+            <End Role="PropertyStatus" EntitySet="PropertyStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertySurvey_offices" Association="Self.FK_PropertySurvey_offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="PropertySurvey" EntitySet="PropertySurvey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertySurvey_propertytypes" Association="Self.FK_PropertySurvey_propertytypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="PropertySurvey" EntitySet="PropertySurvey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tracking_trackingtypes" Association="Self.FK_tracking_trackingtypes">
+            <End Role="TrackingTypes" EntitySet="TrackingTypes" />
+            <End Role="Tracking" EntitySet="Tracking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WindowCards_PropertyEstates" Association="Self.FK_WindowCards_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="WindowCards" EntitySet="WindowCards" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WaltonPropertiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ApplicantGender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApplicantTitle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Baskets" Relationship="Self.FK_Basket_ApplicantTitle" FromRole="ApplicantTitle" ToRole="Basket" />
+          <NavigationProperty Name="Baskets1" Relationship="Self.FK_Basket_FriendTitle" FromRole="ApplicantTitle" ToRole="Basket" />
+          <NavigationProperty Name="PropertyAlerts" Relationship="Self.FK_PropertyAlert_PropertyAlert" FromRole="ApplicantTitle" ToRole="PropertyAlert" />
+        </EntityType>
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SessionId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TitleId" Type="Int32" />
+          <Property Name="Forename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Companyname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Postcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CountryID" Type="Int32" />
+          <Property Name="HeardAboutUs" Type="Int32" />
+          <Property Name="Dob" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="KeepInTouch" Type="Boolean" />
+          <Property Name="FriendTitleId" Type="Int32" />
+          <Property Name="FriendForename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FriendSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FriendEmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FriendContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EmailToFriend" Type="Boolean" />
+          <NavigationProperty Name="ApplicantTitle" Relationship="Self.FK_Basket_ApplicantTitle" FromRole="Basket" ToRole="ApplicantTitle" />
+          <NavigationProperty Name="ApplicantTitle1" Relationship="Self.FK_Basket_FriendTitle" FromRole="Basket" ToRole="ApplicantTitle" />
+          <NavigationProperty Name="BasketItems" Relationship="Self.FK_BasketItems_Basket" FromRole="Basket" ToRole="BasketItems" />
+        </EntityType>
+        <EntityType Name="BasketItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BasketId" Type="Int32" Nullable="false" />
+          <Property Name="PropertyId" Type="Int32" Nullable="false" />
+          <Property Name="OiginalPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deposit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AdminFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Title" Type="Int32" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="Address1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Town" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" />
+          <NavigationProperty Name="Basket" Relationship="Self.FK_BasketItems_Basket" FromRole="BasketItems" ToRole="Basket" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_BasketItems_PropertyEstates" FromRole="BasketItems" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="DevelopmentGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HouseNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="County" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Logo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HeaderImage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="URL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_DevelopmentGroups" FromRole="DevelopmentGroups" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="ExportConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExportMediaID" Type="Int32" />
+          <Property Name="PropertyCategoryList" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MinimumPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MaximumPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MinimumBedrooms" Type="Int32" />
+          <Property Name="MaximumBedrooms" Type="Int32" />
+          <Property Name="PropertyClientTypeList" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyTypeList" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SearchTypeList" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUploadDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayCategoryTypes" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayClientTypes" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayPropertyTypes" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayMinBedrooms" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayMaxBedrooms" Type="Boolean" Nullable="false" />
+          <Property Name="AllowMultipleCategoryTypes" Type="Boolean" Nullable="false" />
+          <Property Name="RightMoveChannel" Type="Int32" />
+          <Property Name="RightMoveAgentRef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ExportMedia" Relationship="Self.FK_ExportConfig_ExportMedia" FromRole="ExportConfig" ToRole="ExportMedia" />
+        </EntityType>
+        <EntityType Name="ExportMedia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExportType" Type="Int32" Nullable="false" />
+          <Property Name="ApiUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FtpAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ExportConfigs" Relationship="Self.FK_ExportConfig_ExportMedia" FromRole="ExportMedia" ToRole="ExportConfig" />
+          <NavigationProperty Name="ExportMediaLogs" Relationship="Self.FK_ExportMediaLog_ExportMedia" FromRole="ExportMedia" ToRole="ExportMediaLog" />
+          <NavigationProperty Name="ExportProcesseds" Relationship="Self.FK_ExportProcessed_ExportMedia" FromRole="ExportMedia" ToRole="ExportProcessed" />
+        </EntityType>
+        <EntityType Name="ExportMediaLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExportMediaID" Type="Int32" />
+          <Property Name="PropertyID" Type="Int32" />
+          <Property Name="BranchID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="APIReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="SuccessResponse" Type="Boolean" />
+          <Property Name="ChangeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExportProcessID" Type="Int32" />
+          <NavigationProperty Name="ExportMedia" Relationship="Self.FK_ExportMediaLog_ExportMedia" FromRole="ExportMediaLog" ToRole="ExportMedia" />
+          <NavigationProperty Name="ExportProcessed" Relationship="Self.FK_ExportMediaLog_ExportProcessed" FromRole="ExportMediaLog" ToRole="ExportProcessed" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_ExportMediaLog_PropertyEstates" FromRole="ExportMediaLog" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="ExportProcessed">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MediaID" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Running" Type="Boolean" />
+          <Property Name="Manual" Type="Boolean" />
+          <Property Name="AdditionalDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ExportMedia" Relationship="Self.FK_ExportProcessed_ExportMedia" FromRole="ExportProcessed" ToRole="ExportMedia" />
+          <NavigationProperty Name="ExportMediaLogs" Relationship="Self.FK_ExportMediaLog_ExportProcessed" FromRole="ExportProcessed" ToRole="ExportMediaLog" />
+        </EntityType>
+        <EntityType Name="FurnishedType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VebraId" Type="Int32" />
+          <Property Name="GeminiId" Type="Int32" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_FurnishedType" FromRole="FurnishedType" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="ImportType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="ProcessName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_ImportType" FromRole="ImportType" ToRole="PropertyEstates" />
+          <NavigationProperty Name="PropertyImportProcesses" Relationship="Self.FK_PropertyImportProcesses_ImportType" FromRole="ImportType" ToRole="PropertyImportProcesses" />
+        </EntityType>
+        <EntityType Name="Office">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchid" Type="Int32" Nullable="false" />
+          <Property Name="officename" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="address2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="towncity" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="county" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="postcode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="telephoneLet" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="emailaddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="salesemailaddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="priority" Type="Int32" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_offices" FromRole="Offices" ToRole="PropertyEstates" />
+          <NavigationProperty Name="PropertySurveys" Relationship="Self.FK_PropertySurvey_offices" FromRole="Offices" ToRole="PropertySurvey" />
+        </EntityType>
+        <EntityType Name="PropertyAlert">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="Int32" Nullable="false" />
+          <Property Name="Forename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyTypeIDs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyTypeTitles" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MinPrice" Type="Double" />
+          <Property Name="MaxPrice" Type="Double" />
+          <Property Name="MinBedrooms" Type="Int32" />
+          <Property Name="MaxBedrooms" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Radius" Type="Double" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="SubscriptionStartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SubscriptionExpiryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SubscriptionCode" Type="Guid" Nullable="false" />
+          <Property Name="DateProcessed" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="PPPW" Type="Boolean" />
+          <Property Name="PCM" Type="Boolean" />
+          <Property Name="Portfolios" Type="Boolean" />
+          <Property Name="Terms" Type="Boolean" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="ClientType" Type="Int32" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="IsAlert" Type="Boolean" />
+          <Property Name="AddedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ApplicantTitle" Relationship="Self.FK_PropertyAlert_PropertyAlert" FromRole="PropertyAlert" ToRole="ApplicantTitle" />
+          <NavigationProperty Name="PropertyAlertsProcesseds" Relationship="Self.FK_PropertyAlertsProcessed_PropertyAlert" FromRole="PropertyAlert" ToRole="PropertyAlertsProcessed" />
+        </EntityType>
+        <EntityType Name="PropertyAlertsProcessed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyAlertID" Type="Int32" Nullable="false" />
+          <Property Name="DateAlertSent" Type="DateTime" Precision="3" />
+          <Property Name="PropertyID" Type="Int32" />
+          <Property Name="priceend" Type="Double" />
+          <Property Name="pricePCM" Type="Double" />
+          <NavigationProperty Name="PropertyAlert" Relationship="Self.FK_PropertyAlertsProcessed_PropertyAlert" FromRole="PropertyAlertsProcessed" ToRole="PropertyAlert" />
+        </EntityType>
+        <EntityType Name="PropertyCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_PropertyCategory" FromRole="PropertyCategory" ToRole="PropertyEstates" />
+          <NavigationProperty Name="PropertyStatus" Relationship="Self.FK_propertystatus_PropertyCategory" FromRole="PropertyCategory" ToRole="PropertyStatus" />
+        </EntityType>
+        <EntityType Name="PropertyClientType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isSale" Type="Boolean" Nullable="false" />
+          <Property Name="isLet" Type="Boolean" Nullable="false" />
+          <Property Name="isNewHomes" Type="Boolean" Nullable="false" />
+          <Property Name="isInvestment" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PropertyEstateClientTypes" Relationship="Self.FK_PropertyEstateClientTypes_PropertyClientType" FromRole="PropertyClientType" ToRole="PropertyEstateClientTypes" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_PropertyClientType" FromRole="PropertyClientType" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="PropertyEstateClientType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyId" Type="Int32" Nullable="false" />
+          <Property Name="ClientTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PropertyClientType" Relationship="Self.FK_PropertyEstateClientTypes_PropertyClientType" FromRole="PropertyEstateClientTypes" ToRole="PropertyClientType" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_PropertyEstateClientTypes_PropertyEstates" FromRole="PropertyEstateClientTypes" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="PropertyEstate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vebraid" Type="Int32" />
+          <Property Name="importedsource" Type="Int32" />
+          <Property Name="ExpertAgentRef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="agentref" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="developmentid" Type="Int32" />
+          <Property Name="propertytypeid" Type="Int32" />
+          <Property Name="categoryid" Type="Int32" />
+          <Property Name="clienttypeid" Type="Int32" />
+          <Property Name="housename" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="housenumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fulladdress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="address1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="address2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="towncity" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="county" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="postcode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="postcode1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="postcode2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="regionid" Type="Byte" />
+          <Property Name="coastal" Type="Boolean" Nullable="false" />
+          <Property Name="equestrian" Type="Boolean" Nullable="false" />
+          <Property Name="mainimage" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="shortdescription" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="longdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="roominformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="footer" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+          <Property Name="pricestart" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="priceend" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pricePCM" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pricetext" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="offersInExcess" Type="Boolean" Nullable="false" />
+          <Property Name="bedrooms" Type="Int32" Nullable="false" />
+          <Property Name="receptions" Type="Int32" Nullable="false" />
+          <Property Name="bathrooms" Type="Int32" Nullable="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <Property Name="officeid" Type="Int32" Nullable="false" />
+          <Property Name="propertystatusid" Type="Int32" />
+          <Property Name="propertydate" Type="DateTime" Precision="0" />
+          <Property Name="dateadded" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="israre" Type="Boolean" />
+          <Property Name="energydocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="latitude" Type="Double" />
+          <Property Name="longitude" Type="Double" />
+          <Property Name="latitudeInDegrees" Type="Double" />
+          <Property Name="longitudeInDegrees" Type="Double" />
+          <Property Name="onlineenquiries" Type="Int32" />
+          <Property Name="lastvieweddate" Type="DateTime" Precision="0" />
+          <Property Name="video" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="videodescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="floorplan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HasImage" Type="Boolean" />
+          <Property Name="Tour" Type="Boolean" />
+          <Property Name="Furnished" Type="Int32" Nullable="false" />
+          <Property Name="locality" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="priceispcm" Type="Boolean" Nullable="false" />
+          <Property Name="displayprice" Type="Boolean" Nullable="false" />
+          <Property Name="displayaddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="vebra360" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsImported" Type="Boolean" Nullable="false" />
+          <Property Name="isNew" Type="Boolean" />
+          <Property Name="LetDeposit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="LetAgencyFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FixedDeposit" Type="Boolean" />
+          <Property Name="EPCEnergyCurrent" Type="Int32" />
+          <Property Name="EPCEnergyPotential" Type="Int32" />
+          <Property Name="EPCCo2Current" Type="Int32" />
+          <Property Name="EPCCo2Potential" Type="Int32" />
+          <Property Name="IsFeatured" Type="Boolean" />
+          <Property Name="Tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DoNotExport" Type="Boolean" />
+          <Property Name="DoNotImportData" Type="Boolean" />
+          <Property Name="PropertyEndDate" Type="DateTime" Precision="0" />
+          <Property Name="Portfolio" Type="Boolean" />
+          <NavigationProperty Name="BasketItems" Relationship="Self.FK_BasketItems_PropertyEstates" FromRole="PropertyEstates" ToRole="BasketItems" />
+          <NavigationProperty Name="DevelopmentGroup" Relationship="Self.FK_PropertyEstates_DevelopmentGroups" FromRole="PropertyEstates" ToRole="DevelopmentGroups" />
+          <NavigationProperty Name="ExportMediaLogs" Relationship="Self.FK_ExportMediaLog_PropertyEstates" FromRole="PropertyEstates" ToRole="ExportMediaLog" />
+          <NavigationProperty Name="FurnishedType" Relationship="Self.FK_PropertyEstates_FurnishedType" FromRole="PropertyEstates" ToRole="FurnishedType" />
+          <NavigationProperty Name="ImportType" Relationship="Self.FK_PropertyEstates_ImportType" FromRole="PropertyEstates" ToRole="ImportType" />
+          <NavigationProperty Name="Office" Relationship="Self.FK_PropertyEstates_offices" FromRole="PropertyEstates" ToRole="Offices" />
+          <NavigationProperty Name="PropertyCategory" Relationship="Self.FK_PropertyEstates_PropertyCategory" FromRole="PropertyEstates" ToRole="PropertyCategory" />
+          <NavigationProperty Name="PropertyClientType" Relationship="Self.FK_PropertyEstates_PropertyClientType" FromRole="PropertyEstates" ToRole="PropertyClientType" />
+          <NavigationProperty Name="PropertyEstateClientTypes" Relationship="Self.FK_PropertyEstateClientTypes_PropertyEstates" FromRole="PropertyEstates" ToRole="PropertyEstateClientTypes" />
+          <NavigationProperty Name="PropertyStatu" Relationship="Self.FK_PropertyEstates_propertystatus" FromRole="PropertyEstates" ToRole="PropertyStatus" />
+          <NavigationProperty Name="PropertyType" Relationship="Self.FK_PropertyEstates_propertytypes" FromRole="PropertyEstates" ToRole="PropertyTypes" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_PropertyEstates_regions" FromRole="PropertyEstates" ToRole="Regions" />
+          <NavigationProperty Name="PropertyEstateTypes" Relationship="Self.FK_PropertyEstateTypes_PropertyEstates" FromRole="PropertyEstates" ToRole="PropertyEstateTypes" />
+          <NavigationProperty Name="PropertyFiles" Relationship="Self.FK_PropertyFiles_PropertyEstates" FromRole="PropertyEstates" ToRole="PropertyFiles" />
+          <NavigationProperty Name="PropertyOptions" Relationship="Self.FK_PropertyOptions_PropertyEstates" FromRole="PropertyEstates" ToRole="PropertyOptions" />
+          <NavigationProperty Name="PropertyRooms" Relationship="Self.FK_PropertyRooms_PropertyEstates" FromRole="PropertyEstates" ToRole="PropertyRooms" />
+          <NavigationProperty Name="WindowCards" Relationship="Self.FK_WindowCards_PropertyEstates" FromRole="PropertyEstates" ToRole="WindowCards" />
+        </EntityType>
+        <EntityType Name="PropertyEstateType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyId" Type="Int32" Nullable="false" />
+          <Property Name="PropertyTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_PropertyEstateTypes_PropertyEstates" FromRole="PropertyEstateTypes" ToRole="PropertyEstates" />
+          <NavigationProperty Name="PropertyType" Relationship="Self.FK_PropertyEstateTypes_PropertyTypes" FromRole="PropertyEstateTypes" ToRole="PropertyTypes" />
+        </EntityType>
+        <EntityType Name="PropertyFile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="filename" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="originalfilename" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileType" Type="Int32" Nullable="false" />
+          <Property Name="priority" Type="Int32" />
+          <Property Name="caption" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="dateupdated" Type="DateTime" Precision="3" />
+          <Property Name="dateadded" Type="DateTime" Precision="3" />
+          <Property Name="VebraURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="IsImported" Type="Boolean" />
+          <Property Name="importedsource" Type="Int32" />
+          <Property Name="FileExistOnFeed" Type="Boolean" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_PropertyFiles_PropertyEstates" FromRole="PropertyFiles" ToRole="PropertyEstates" />
+          <NavigationProperty Name="PropertyFileType" Relationship="Self.FK_propertyFiles_propertyfiletype" FromRole="PropertyFiles" ToRole="PropertyFileType" />
+        </EntityType>
+        <EntityType Name="PropertyFileType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vebraid" Type="Int32" Nullable="false" />
+          <Property Name="filetype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="download" Type="Boolean" Nullable="false" />
+          <Property Name="ExpertAgentFileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExpertAgentID" Type="Int32" />
+          <Property Name="RightMoveID" Type="Int32" />
+          <NavigationProperty Name="PropertyFiles" Relationship="Self.FK_propertyFiles_propertyfiletype" FromRole="PropertyFileType" ToRole="PropertyFiles" />
+        </EntityType>
+        <EntityType Name="PropertyImage">
+          <Key>
+            <PropertyRef Name="imageid" />
+          </Key>
+          <Property Name="imageid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="room" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="priority" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PropertyImageType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vebraid" Type="Int32" Nullable="false" />
+          <Property Name="imagetype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyImportProcess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImportSourse" Type="Int32" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="IsRunning" Type="Boolean" Nullable="false" />
+          <Property Name="IsManualProcess" Type="Boolean" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ImportType" Relationship="Self.FK_PropertyImportProcesses_ImportType" FromRole="PropertyImportProcesses" ToRole="ImportType" />
+        </EntityType>
+        <EntityType Name="PropertyLettingSpecification">
+          <Key>
+            <PropertyRef Name="propertyid" />
+            <PropertyRef Name="specificationid" />
+          </Key>
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="specificationid" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyOption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="Options" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MetricSize" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Optiontype" Type="Int32" Nullable="false" />
+          <Property Name="IsImported" Type="Boolean" Nullable="false" />
+          <Property Name="importedsource" Type="Int32" />
+          <Property Name="FieldId" Type="Int32" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_PropertyOptions_PropertyEstates" FromRole="PropertyOptions" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="PropertyRoom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="priority" Type="Int32" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="imperial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="metric" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dimensions" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fileindex" Type="Int32" />
+          <Property Name="isImported" Type="Boolean" Nullable="false" />
+          <Property Name="importedsource" Type="Int32" />
+          <Property Name="active" Type="Boolean" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_PropertyRooms_PropertyEstates" FromRole="PropertyRooms" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="PropertyStatu">
+          <Key>
+            <PropertyRef Name="propertystatusid" />
+          </Key>
+          <Property Name="propertystatusid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="priority" Type="Int32" Nullable="false" />
+          <Property Name="catid" Type="Int32" Nullable="false" />
+          <Property Name="vebraid" Type="Int32" Nullable="false" />
+          <Property Name="ExpertAgentID" Type="Int32" />
+          <Property Name="Tag" Type="Boolean" />
+          <Property Name="RightmoveStatus" Type="Int32" />
+          <Property Name="ZooplaStatus" Type="Int32" />
+          <NavigationProperty Name="PropertyCategory" Relationship="Self.FK_propertystatus_PropertyCategory" FromRole="PropertyStatus" ToRole="PropertyCategory" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_propertystatus" FromRole="PropertyStatus" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="PropertyStyle">
+          <Key>
+            <PropertyRef Name="propertyid" />
+          </Key>
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="styleid" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertySurvey">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Forename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BesttimeToCall" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AlternativeTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BesttimeToCall1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobilenumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyTypeID" Type="Int32" Nullable="false" />
+          <Property Name="PropertyAge" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PropertyPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Bedrooms" Type="Int32" />
+          <Property Name="Address1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Town" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="County" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Valuation" Type="Boolean" />
+          <Property Name="Survey" Type="Boolean" />
+          <Property Name="EPC" Type="Boolean" />
+          <Property Name="OfficeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Office" Relationship="Self.FK_PropertySurvey_offices" FromRole="PropertySurvey" ToRole="Offices" />
+          <NavigationProperty Name="PropertyType" Relationship="Self.FK_PropertySurvey_propertytypes" FromRole="PropertySurvey" ToRole="PropertyTypes" />
+        </EntityType>
+        <EntityType Name="PropertyTypeGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Priority" Type="Int32" Nullable="false" />
+          <Property Name="IsSale" Type="Boolean" Nullable="false" />
+          <Property Name="IsLet" Type="Boolean" Nullable="false" />
+          <Property Name="IsNewHomes" Type="Boolean" Nullable="false" />
+          <Property Name="IsInvestment" Type="Boolean" Nullable="false" />
+          <Property Name="SubType" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="propertytypeid" />
+          </Key>
+          <Property Name="propertytypeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Typeid" Type="Int32" />
+          <Property Name="groupid1" Type="Int32" />
+          <Property Name="groupid2" Type="Int32" />
+          <Property Name="groupid3" Type="Int32" />
+          <Property Name="isClientType" Type="Boolean" />
+          <Property Name="RightMoveID" Type="Int32" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_propertytypes" FromRole="PropertyTypes" ToRole="PropertyEstates" />
+          <NavigationProperty Name="PropertyEstateTypes" Relationship="Self.FK_PropertyEstateTypes_PropertyTypes" FromRole="PropertyTypes" ToRole="PropertyEstateTypes" />
+          <NavigationProperty Name="PropertySurveys" Relationship="Self.FK_PropertySurvey_propertytypes" FromRole="PropertyTypes" ToRole="PropertySurvey" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="regionid" />
+          </Key>
+          <Property Name="regionid" Type="Byte" Nullable="false" />
+          <Property Name="region1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="priority" Type="Byte" Nullable="false" />
+          <Property Name="zdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="zimage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zhits" Type="Int32" />
+          <NavigationProperty Name="PropertyEstates" Relationship="Self.FK_PropertyEstates_regions" FromRole="Regions" ToRole="PropertyEstates" />
+        </EntityType>
+        <EntityType Name="Shortlist">
+          <Key>
+            <PropertyRef Name="vipid" />
+            <PropertyRef Name="propertyid" />
+          </Key>
+          <Property Name="vipid" Type="Int32" Nullable="false" />
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tracking">
+          <Key>
+            <PropertyRef Name="trackingid" />
+          </Key>
+          <Property Name="trackingid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="trackingtypeid" Type="Byte" Nullable="false" />
+          <Property Name="propertyid" Type="Int32" Nullable="false" />
+          <Property Name="vipid" Type="Int32" />
+          <Property Name="trackingdate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="TrackingType" Relationship="Self.FK_tracking_trackingtypes" FromRole="Tracking" ToRole="TrackingTypes" />
+        </EntityType>
+        <EntityType Name="TrackingType">
+          <Key>
+            <PropertyRef Name="trackingtypeid" />
+          </Key>
+          <Property Name="trackingtypeid" Type="Byte" Nullable="false" />
+          <Property Name="trackingtype1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Trackings" Relationship="Self.FK_tracking_trackingtypes" FromRole="TrackingTypes" ToRole="Tracking" />
+        </EntityType>
+        <EntityType Name="WindowCard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FooterText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyId" Type="Int32" />
+          <Property Name="Template" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BackGroundImage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyImage" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ShortlistKey" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="PropertyEstate" Relationship="Self.FK_WindowCards_PropertyEstates" FromRole="WindowCards" ToRole="PropertyEstates" />
+        </EntityType>
+        <Association Name="FK_Basket_ApplicantTitle">
+          <End Role="ApplicantTitle" Type="Self.ApplicantTitle" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicantTitle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="TitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_FriendTitle">
+          <End Role="ApplicantTitle" Type="Self.ApplicantTitle" Multiplicity="0..1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicantTitle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="FriendTitleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyAlert_PropertyAlert">
+          <End Role="ApplicantTitle" Type="Self.ApplicantTitle" Multiplicity="1" />
+          <End Role="PropertyAlert" Type="Self.PropertyAlert" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicantTitle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyAlert">
+              <PropertyRef Name="Title" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItems_Basket">
+          <End Role="Basket" Type="Self.Basket" Multiplicity="1" />
+          <End Role="BasketItems" Type="Self.BasketItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketItems">
+              <PropertyRef Name="BasketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItems_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="1" />
+          <End Role="BasketItems" Type="Self.BasketItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="BasketItems">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_DevelopmentGroups">
+          <End Role="DevelopmentGroups" Type="Self.DevelopmentGroup" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DevelopmentGroups">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="developmentid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportConfig_ExportMedia">
+          <End Role="ExportMedia" Type="Self.ExportMedia" Multiplicity="0..1" />
+          <End Role="ExportConfig" Type="Self.ExportConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportMedia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportConfig">
+              <PropertyRef Name="ExportMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportMediaLog_ExportMedia">
+          <End Role="ExportMedia" Type="Self.ExportMedia" Multiplicity="0..1" />
+          <End Role="ExportMediaLog" Type="Self.ExportMediaLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportMedia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportMediaLog">
+              <PropertyRef Name="ExportMediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportProcessed_ExportMedia">
+          <End Role="ExportMedia" Type="Self.ExportMedia" Multiplicity="0..1" />
+          <End Role="ExportProcessed" Type="Self.ExportProcessed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportMedia">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportProcessed">
+              <PropertyRef Name="MediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportMediaLog_ExportProcessed">
+          <End Role="ExportProcessed" Type="Self.ExportProcessed" Multiplicity="0..1" />
+          <End Role="ExportMediaLog" Type="Self.ExportMediaLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ExportProcessed">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ExportMediaLog">
+              <PropertyRef Name="ExportProcessID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExportMediaLog_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="0..1" />
+          <End Role="ExportMediaLog" Type="Self.ExportMediaLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ExportMediaLog">
+              <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_FurnishedType">
+          <End Role="FurnishedType" Type="Self.FurnishedType" Multiplicity="1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FurnishedType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="Furnished" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_ImportType">
+          <End Role="ImportType" Type="Self.ImportType" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="importedsource" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyImportProcesses_ImportType">
+          <End Role="ImportType" Type="Self.ImportType" Multiplicity="1" />
+          <End Role="PropertyImportProcesses" Type="Self.PropertyImportProcess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyImportProcesses">
+              <PropertyRef Name="ImportSourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_offices">
+          <End Role="Offices" Type="Self.Office" Multiplicity="1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="officeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertySurvey_offices">
+          <End Role="Offices" Type="Self.Office" Multiplicity="1" />
+          <End Role="PropertySurvey" Type="Self.PropertySurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offices">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertySurvey">
+              <PropertyRef Name="OfficeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyAlertsProcessed_PropertyAlert">
+          <End Role="PropertyAlert" Type="Self.PropertyAlert" Multiplicity="1" />
+          <End Role="PropertyAlertsProcessed" Type="Self.PropertyAlertsProcessed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyAlert">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyAlertsProcessed">
+              <PropertyRef Name="PropertyAlertID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_PropertyCategory">
+          <End Role="PropertyCategory" Type="Self.PropertyCategory" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="categoryid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_propertystatus_PropertyCategory">
+          <End Role="PropertyCategory" Type="Self.PropertyCategory" Multiplicity="1" />
+          <End Role="PropertyStatus" Type="Self.PropertyStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyCategory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyStatus">
+              <PropertyRef Name="catid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateClientTypes_PropertyClientType">
+          <End Role="PropertyClientType" Type="Self.PropertyClientType" Multiplicity="1" />
+          <End Role="PropertyEstateClientTypes" Type="Self.PropertyEstateClientType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyClientType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropertyEstateClientTypes">
+              <PropertyRef Name="ClientTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_PropertyClientType">
+          <End Role="PropertyClientType" Type="Self.PropertyClientType" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyClientType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="clienttypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateClientTypes_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="1" />
+          <End Role="PropertyEstateClientTypes" Type="Self.PropertyEstateClientType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstateClientTypes">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_propertystatus">
+          <End Role="PropertyStatus" Type="Self.PropertyStatu" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyStatus">
+              <PropertyRef Name="propertystatusid" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="propertystatusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_propertytypes">
+          <End Role="PropertyTypes" Type="Self.PropertyType" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="propertytypeid" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="propertytypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstates_regions">
+          <End Role="Regions" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regions">
+              <PropertyRef Name="regionid" />
+            </Principal>
+            <Dependent Role="PropertyEstates">
+              <PropertyRef Name="regionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateTypes_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="1" />
+          <End Role="PropertyEstateTypes" Type="Self.PropertyEstateType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyEstateTypes">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyFiles_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="1" />
+          <End Role="PropertyFiles" Type="Self.PropertyFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyFiles">
+              <PropertyRef Name="propertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyOptions_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="1" />
+          <End Role="PropertyOptions" Type="Self.PropertyOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyOptions">
+              <PropertyRef Name="propertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyRooms_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="1" />
+          <End Role="PropertyRooms" Type="Self.PropertyRoom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyRooms">
+              <PropertyRef Name="propertyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WindowCards_PropertyEstates">
+          <End Role="PropertyEstates" Type="Self.PropertyEstate" Multiplicity="0..1" />
+          <End Role="WindowCards" Type="Self.WindowCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyEstates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="WindowCards">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyEstateTypes_PropertyTypes">
+          <End Role="PropertyTypes" Type="Self.PropertyType" Multiplicity="1" />
+          <End Role="PropertyEstateTypes" Type="Self.PropertyEstateType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="propertytypeid" />
+            </Principal>
+            <Dependent Role="PropertyEstateTypes">
+              <PropertyRef Name="PropertyTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_propertyFiles_propertyfiletype">
+          <End Role="PropertyFileType" Type="Self.PropertyFileType" Multiplicity="1" />
+          <End Role="PropertyFiles" Type="Self.PropertyFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyFileType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PropertyFiles">
+              <PropertyRef Name="FileType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertySurvey_propertytypes">
+          <End Role="PropertyTypes" Type="Self.PropertyType" Multiplicity="1" />
+          <End Role="PropertySurvey" Type="Self.PropertySurvey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypes">
+              <PropertyRef Name="propertytypeid" />
+            </Principal>
+            <Dependent Role="PropertySurvey">
+              <PropertyRef Name="PropertyTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tracking_trackingtypes">
+          <End Role="TrackingTypes" Type="Self.TrackingType" Multiplicity="1" />
+          <End Role="Tracking" Type="Self.Tracking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrackingTypes">
+              <PropertyRef Name="trackingtypeid" />
+            </Principal>
+            <Dependent Role="Tracking">
+              <PropertyRef Name="trackingtypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WaltonPropertiesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ApplicantGenders" EntityType="Self.ApplicantGender" />
+          <EntitySet Name="ApplicantTitles" EntityType="Self.ApplicantTitle" />
+          <EntitySet Name="Baskets" EntityType="Self.Basket" />
+          <EntitySet Name="BasketItems" EntityType="Self.BasketItem" />
+          <EntitySet Name="DevelopmentGroups" EntityType="Self.DevelopmentGroup" />
+          <EntitySet Name="ExportConfigs" EntityType="Self.ExportConfig" />
+          <EntitySet Name="ExportMedias" EntityType="Self.ExportMedia" />
+          <EntitySet Name="ExportMediaLogs" EntityType="Self.ExportMediaLog" />
+          <EntitySet Name="ExportProcesseds" EntityType="Self.ExportProcessed" />
+          <EntitySet Name="FurnishedTypes" EntityType="Self.FurnishedType" />
+          <EntitySet Name="ImportTypes" EntityType="Self.ImportType" />
+          <EntitySet Name="Offices" EntityType="Self.Office" />
+          <EntitySet Name="PropertyAlerts" EntityType="Self.PropertyAlert" />
+          <EntitySet Name="PropertyAlertsProcesseds" EntityType="Self.PropertyAlertsProcessed" />
+          <EntitySet Name="PropertyCategories" EntityType="Self.PropertyCategory" />
+          <EntitySet Name="PropertyClientTypes" EntityType="Self.PropertyClientType" />
+          <EntitySet Name="PropertyEstateClientTypes" EntityType="Self.PropertyEstateClientType" />
+          <EntitySet Name="PropertyEstates" EntityType="Self.PropertyEstate" />
+          <EntitySet Name="PropertyEstateTypes" EntityType="Self.PropertyEstateType" />
+          <EntitySet Name="PropertyFiles" EntityType="Self.PropertyFile" />
+          <EntitySet Name="PropertyFileTypes" EntityType="Self.PropertyFileType" />
+          <EntitySet Name="PropertyImages" EntityType="Self.PropertyImage" />
+          <EntitySet Name="PropertyImageTypes" EntityType="Self.PropertyImageType" />
+          <EntitySet Name="PropertyImportProcesses" EntityType="Self.PropertyImportProcess" />
+          <EntitySet Name="PropertyLettingSpecifications" EntityType="Self.PropertyLettingSpecification" />
+          <EntitySet Name="PropertyOptions" EntityType="Self.PropertyOption" />
+          <EntitySet Name="PropertyRooms" EntityType="Self.PropertyRoom" />
+          <EntitySet Name="PropertyStatus" EntityType="Self.PropertyStatu" />
+          <EntitySet Name="PropertyStyles" EntityType="Self.PropertyStyle" />
+          <EntitySet Name="PropertySurveys" EntityType="Self.PropertySurvey" />
+          <EntitySet Name="PropertyTypeGroups" EntityType="Self.PropertyTypeGroup" />
+          <EntitySet Name="PropertyTypes" EntityType="Self.PropertyType" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Shortlists" EntityType="Self.Shortlist" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Trackings" EntityType="Self.Tracking" />
+          <EntitySet Name="TrackingTypes" EntityType="Self.TrackingType" />
+          <EntitySet Name="WindowCards" EntityType="Self.WindowCard" />
+          <AssociationSet Name="FK_Basket_ApplicantTitle" Association="Self.FK_Basket_ApplicantTitle">
+            <End Role="ApplicantTitle" EntitySet="ApplicantTitles" />
+            <End Role="Basket" EntitySet="Baskets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_FriendTitle" Association="Self.FK_Basket_FriendTitle">
+            <End Role="ApplicantTitle" EntitySet="ApplicantTitles" />
+            <End Role="Basket" EntitySet="Baskets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyAlert_PropertyAlert" Association="Self.FK_PropertyAlert_PropertyAlert">
+            <End Role="ApplicantTitle" EntitySet="ApplicantTitles" />
+            <End Role="PropertyAlert" EntitySet="PropertyAlerts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItems_Basket" Association="Self.FK_BasketItems_Basket">
+            <End Role="Basket" EntitySet="Baskets" />
+            <End Role="BasketItems" EntitySet="BasketItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItems_PropertyEstates" Association="Self.FK_BasketItems_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="BasketItems" EntitySet="BasketItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_DevelopmentGroups" Association="Self.FK_PropertyEstates_DevelopmentGroups">
+            <End Role="DevelopmentGroups" EntitySet="DevelopmentGroups" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportConfig_ExportMedia" Association="Self.FK_ExportConfig_ExportMedia">
+            <End Role="ExportMedia" EntitySet="ExportMedias" />
+            <End Role="ExportConfig" EntitySet="ExportConfigs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportMediaLog_ExportMedia" Association="Self.FK_ExportMediaLog_ExportMedia">
+            <End Role="ExportMedia" EntitySet="ExportMedias" />
+            <End Role="ExportMediaLog" EntitySet="ExportMediaLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportProcessed_ExportMedia" Association="Self.FK_ExportProcessed_ExportMedia">
+            <End Role="ExportMedia" EntitySet="ExportMedias" />
+            <End Role="ExportProcessed" EntitySet="ExportProcesseds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportMediaLog_ExportProcessed" Association="Self.FK_ExportMediaLog_ExportProcessed">
+            <End Role="ExportProcessed" EntitySet="ExportProcesseds" />
+            <End Role="ExportMediaLog" EntitySet="ExportMediaLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExportMediaLog_PropertyEstates" Association="Self.FK_ExportMediaLog_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="ExportMediaLog" EntitySet="ExportMediaLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_FurnishedType" Association="Self.FK_PropertyEstates_FurnishedType">
+            <End Role="FurnishedType" EntitySet="FurnishedTypes" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_ImportType" Association="Self.FK_PropertyEstates_ImportType">
+            <End Role="ImportType" EntitySet="ImportTypes" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyImportProcesses_ImportType" Association="Self.FK_PropertyImportProcesses_ImportType">
+            <End Role="ImportType" EntitySet="ImportTypes" />
+            <End Role="PropertyImportProcesses" EntitySet="PropertyImportProcesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_offices" Association="Self.FK_PropertyEstates_offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertySurvey_offices" Association="Self.FK_PropertySurvey_offices">
+            <End Role="Offices" EntitySet="Offices" />
+            <End Role="PropertySurvey" EntitySet="PropertySurveys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyAlertsProcessed_PropertyAlert" Association="Self.FK_PropertyAlertsProcessed_PropertyAlert">
+            <End Role="PropertyAlert" EntitySet="PropertyAlerts" />
+            <End Role="PropertyAlertsProcessed" EntitySet="PropertyAlertsProcesseds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_PropertyCategory" Association="Self.FK_PropertyEstates_PropertyCategory">
+            <End Role="PropertyCategory" EntitySet="PropertyCategories" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_propertystatus_PropertyCategory" Association="Self.FK_propertystatus_PropertyCategory">
+            <End Role="PropertyCategory" EntitySet="PropertyCategories" />
+            <End Role="PropertyStatus" EntitySet="PropertyStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateClientTypes_PropertyClientType" Association="Self.FK_PropertyEstateClientTypes_PropertyClientType">
+            <End Role="PropertyClientType" EntitySet="PropertyClientTypes" />
+            <End Role="PropertyEstateClientTypes" EntitySet="PropertyEstateClientTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_PropertyClientType" Association="Self.FK_PropertyEstates_PropertyClientType">
+            <End Role="PropertyClientType" EntitySet="PropertyClientTypes" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateClientTypes_PropertyEstates" Association="Self.FK_PropertyEstateClientTypes_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyEstateClientTypes" EntitySet="PropertyEstateClientTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_propertystatus" Association="Self.FK_PropertyEstates_propertystatus">
+            <End Role="PropertyStatus" EntitySet="PropertyStatus" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_propertytypes" Association="Self.FK_PropertyEstates_propertytypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstates_regions" Association="Self.FK_PropertyEstates_regions">
+            <End Role="Regions" EntitySet="Regions" />
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateTypes_PropertyEstates" Association="Self.FK_PropertyEstateTypes_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyEstateTypes" EntitySet="PropertyEstateTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyFiles_PropertyEstates" Association="Self.FK_PropertyFiles_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyFiles" EntitySet="PropertyFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyOptions_PropertyEstates" Association="Self.FK_PropertyOptions_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyOptions" EntitySet="PropertyOptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyRooms_PropertyEstates" Association="Self.FK_PropertyRooms_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="PropertyRooms" EntitySet="PropertyRooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WindowCards_PropertyEstates" Association="Self.FK_WindowCards_PropertyEstates">
+            <End Role="PropertyEstates" EntitySet="PropertyEstates" />
+            <End Role="WindowCards" EntitySet="WindowCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyEstateTypes_PropertyTypes" Association="Self.FK_PropertyEstateTypes_PropertyTypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="PropertyEstateTypes" EntitySet="PropertyEstateTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_propertyFiles_propertyfiletype" Association="Self.FK_propertyFiles_propertyfiletype">
+            <End Role="PropertyFileType" EntitySet="PropertyFileTypes" />
+            <End Role="PropertyFiles" EntitySet="PropertyFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertySurvey_propertytypes" Association="Self.FK_PropertySurvey_propertytypes">
+            <End Role="PropertyTypes" EntitySet="PropertyTypes" />
+            <End Role="PropertySurvey" EntitySet="PropertySurveys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tracking_trackingtypes" Association="Self.FK_tracking_trackingtypes">
+            <End Role="TrackingTypes" EntitySet="TrackingTypes" />
+            <End Role="Tracking" EntitySet="Trackings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WaltonPropertiesModelStoreContainer" CdmEntityContainer="WaltonPropertiesEntities">
+          <EntitySetMapping Name="ApplicantGenders">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ApplicantGender">
+              <MappingFragment StoreEntitySet="ApplicantGender">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicantTitles">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ApplicantTitle">
+              <MappingFragment StoreEntitySet="ApplicantTitle">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Baskets">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.Basket">
+              <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="TitleId" ColumnName="TitleId" />
+                <ScalarProperty Name="Forename" ColumnName="Forename" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Companyname" ColumnName="Companyname" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="HeardAboutUs" ColumnName="HeardAboutUs" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="KeepInTouch" ColumnName="KeepInTouch" />
+                <ScalarProperty Name="FriendTitleId" ColumnName="FriendTitleId" />
+                <ScalarProperty Name="FriendForename" ColumnName="FriendForename" />
+                <ScalarProperty Name="FriendSurname" ColumnName="FriendSurname" />
+                <ScalarProperty Name="FriendEmailAddress" ColumnName="FriendEmailAddress" />
+                <ScalarProperty Name="FriendContactNumber" ColumnName="FriendContactNumber" />
+                <ScalarProperty Name="EmailToFriend" ColumnName="EmailToFriend" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BasketItems">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.BasketItem">
+              <MappingFragment StoreEntitySet="BasketItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BasketId" ColumnName="BasketId" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="OiginalPrice" ColumnName="OiginalPrice" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="AdminFee" ColumnName="AdminFee" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DevelopmentGroups">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.DevelopmentGroup">
+              <MappingFragment StoreEntitySet="DevelopmentGroups">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="HeaderImage" ColumnName="HeaderImage" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportConfigs">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ExportConfig">
+              <MappingFragment StoreEntitySet="ExportConfig">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ExportMediaID" ColumnName="ExportMediaID" />
+                <ScalarProperty Name="PropertyCategoryList" ColumnName="PropertyCategoryList" />
+                <ScalarProperty Name="MinimumPrice" ColumnName="MinimumPrice" />
+                <ScalarProperty Name="MaximumPrice" ColumnName="MaximumPrice" />
+                <ScalarProperty Name="MinimumBedrooms" ColumnName="MinimumBedrooms" />
+                <ScalarProperty Name="MaximumBedrooms" ColumnName="MaximumBedrooms" />
+                <ScalarProperty Name="PropertyClientTypeList" ColumnName="PropertyClientTypeList" />
+                <ScalarProperty Name="PropertyTypeList" ColumnName="PropertyTypeList" />
+                <ScalarProperty Name="SearchTypeList" ColumnName="SearchTypeList" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUploadDate" ColumnName="LastUploadDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="DisplayCategoryTypes" ColumnName="DisplayCategoryTypes" />
+                <ScalarProperty Name="DisplayClientTypes" ColumnName="DisplayClientTypes" />
+                <ScalarProperty Name="DisplayPropertyTypes" ColumnName="DisplayPropertyTypes" />
+                <ScalarProperty Name="DisplayMinBedrooms" ColumnName="DisplayMinBedrooms" />
+                <ScalarProperty Name="DisplayMaxBedrooms" ColumnName="DisplayMaxBedrooms" />
+                <ScalarProperty Name="AllowMultipleCategoryTypes" ColumnName="AllowMultipleCategoryTypes" />
+                <ScalarProperty Name="RightMoveChannel" ColumnName="RightMoveChannel" />
+                <ScalarProperty Name="RightMoveAgentRef" ColumnName="RightMoveAgentRef" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportMedias">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ExportMedia">
+              <MappingFragment StoreEntitySet="ExportMedia">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ExportType" ColumnName="ExportType" />
+                <ScalarProperty Name="ApiUrl" ColumnName="ApiUrl" />
+                <ScalarProperty Name="FtpAddress" ColumnName="FtpAddress" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportMediaLogs">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ExportMediaLog">
+              <MappingFragment StoreEntitySet="ExportMediaLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ExportMediaID" ColumnName="ExportMediaID" />
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="APIReference" ColumnName="APIReference" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SuccessResponse" ColumnName="SuccessResponse" />
+                <ScalarProperty Name="ChangeType" ColumnName="ChangeType" />
+                <ScalarProperty Name="ExportProcessID" ColumnName="ExportProcessID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExportProcesseds">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ExportProcessed">
+              <MappingFragment StoreEntitySet="ExportProcessed">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Running" ColumnName="Running" />
+                <ScalarProperty Name="Manual" ColumnName="Manual" />
+                <ScalarProperty Name="AdditionalDetails" ColumnName="AdditionalDetails" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FurnishedTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.FurnishedType">
+              <MappingFragment StoreEntitySet="FurnishedType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="VebraId" ColumnName="VebraId" />
+                <ScalarProperty Name="GeminiId" ColumnName="GeminiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.ImportType">
+              <MappingFragment StoreEntitySet="ImportType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offices">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.Office">
+              <MappingFragment StoreEntitySet="Offices">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="branchid" ColumnName="branchid" />
+                <ScalarProperty Name="officename" ColumnName="officename" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="towncity" ColumnName="towncity" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="telephoneLet" ColumnName="telephoneLet" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+                <ScalarProperty Name="salesemailaddress" ColumnName="salesemailaddress" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyAlerts">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyAlert">
+              <MappingFragment StoreEntitySet="PropertyAlert">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Forename" ColumnName="Forename" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="PropertyTypeIDs" ColumnName="PropertyTypeIDs" />
+                <ScalarProperty Name="PropertyTypeTitles" ColumnName="PropertyTypeTitles" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="MinBedrooms" ColumnName="MinBedrooms" />
+                <ScalarProperty Name="MaxBedrooms" ColumnName="MaxBedrooms" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Radius" ColumnName="Radius" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="SubscriptionStartDate" ColumnName="SubscriptionStartDate" />
+                <ScalarProperty Name="SubscriptionExpiryDate" ColumnName="SubscriptionExpiryDate" />
+                <ScalarProperty Name="SubscriptionCode" ColumnName="SubscriptionCode" />
+                <ScalarProperty Name="DateProcessed" ColumnName="DateProcessed" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="PPPW" ColumnName="PPPW" />
+                <ScalarProperty Name="PCM" ColumnName="PCM" />
+                <ScalarProperty Name="Portfolios" ColumnName="Portfolios" />
+                <ScalarProperty Name="Terms" ColumnName="Terms" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ClientType" ColumnName="ClientType" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsAlert" ColumnName="IsAlert" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyAlertsProcesseds">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyAlertsProcessed">
+              <MappingFragment StoreEntitySet="PropertyAlertsProcessed">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PropertyAlertID" ColumnName="PropertyAlertID" />
+                <ScalarProperty Name="DateAlertSent" ColumnName="DateAlertSent" />
+                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+                <ScalarProperty Name="priceend" ColumnName="priceend" />
+                <ScalarProperty Name="pricePCM" ColumnName="pricePCM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyCategories">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyCategory">
+              <MappingFragment StoreEntitySet="PropertyCategory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyClientTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyClientType">
+              <MappingFragment StoreEntitySet="PropertyClientType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="isSale" ColumnName="isSale" />
+                <ScalarProperty Name="isLet" ColumnName="isLet" />
+                <ScalarProperty Name="isNewHomes" ColumnName="isNewHomes" />
+                <ScalarProperty Name="isInvestment" ColumnName="isInvestment" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyEstateClientTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyEstateClientType">
+              <MappingFragment StoreEntitySet="PropertyEstateClientTypes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="ClientTypeId" ColumnName="ClientTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyEstates">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyEstate">
+              <MappingFragment StoreEntitySet="PropertyEstates">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="vebraid" ColumnName="vebraid" />
+                <ScalarProperty Name="importedsource" ColumnName="importedsource" />
+                <ScalarProperty Name="ExpertAgentRef" ColumnName="ExpertAgentRef" />
+                <ScalarProperty Name="agentref" ColumnName="agentref" />
+                <ScalarProperty Name="developmentid" ColumnName="developmentid" />
+                <ScalarProperty Name="propertytypeid" ColumnName="propertytypeid" />
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="clienttypeid" ColumnName="clienttypeid" />
+                <ScalarProperty Name="housename" ColumnName="housename" />
+                <ScalarProperty Name="housenumber" ColumnName="housenumber" />
+                <ScalarProperty Name="fulladdress" ColumnName="fulladdress" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="towncity" ColumnName="towncity" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="postcode1" ColumnName="postcode1" />
+                <ScalarProperty Name="postcode2" ColumnName="postcode2" />
+                <ScalarProperty Name="regionid" ColumnName="regionid" />
+                <ScalarProperty Name="coastal" ColumnName="coastal" />
+                <ScalarProperty Name="equestrian" ColumnName="equestrian" />
+                <ScalarProperty Name="mainimage" ColumnName="mainimage" />
+                <ScalarProperty Name="shortdescription" ColumnName="shortdescription" />
+                <ScalarProperty Name="longdescription" ColumnName="longdescription" />
+                <ScalarProperty Name="roominformation" ColumnName="roominformation" />
+                <ScalarProperty Name="footer" ColumnName="footer" />
+                <ScalarProperty Name="pricestart" ColumnName="pricestart" />
+                <ScalarProperty Name="priceend" ColumnName="priceend" />
+                <ScalarProperty Name="pricePCM" ColumnName="pricePCM" />
+                <ScalarProperty Name="pricetext" ColumnName="pricetext" />
+                <ScalarProperty Name="offersInExcess" ColumnName="offersInExcess" />
+                <ScalarProperty Name="bedrooms" ColumnName="bedrooms" />
+                <ScalarProperty Name="receptions" ColumnName="receptions" />
+                <ScalarProperty Name="bathrooms" ColumnName="bathrooms" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="officeid" ColumnName="officeid" />
+                <ScalarProperty Name="propertystatusid" ColumnName="propertystatusid" />
+                <ScalarProperty Name="propertydate" ColumnName="propertydate" />
+                <ScalarProperty Name="dateadded" ColumnName="dateadded" />
+                <ScalarProperty Name="israre" ColumnName="israre" />
+                <ScalarProperty Name="energydocument" ColumnName="energydocument" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitudeInDegrees" ColumnName="latitudeInDegrees" />
+                <ScalarProperty Name="longitudeInDegrees" ColumnName="longitudeInDegrees" />
+                <ScalarProperty Name="onlineenquiries" ColumnName="onlineenquiries" />
+                <ScalarProperty Name="lastvieweddate" ColumnName="lastvieweddate" />
+                <ScalarProperty Name="video" ColumnName="video" />
+                <ScalarProperty Name="videodescription" ColumnName="videodescription" />
+                <ScalarProperty Name="floorplan" ColumnName="floorplan" />
+                <ScalarProperty Name="HasImage" ColumnName="HasImage" />
+                <ScalarProperty Name="Tour" ColumnName="Tour" />
+                <ScalarProperty Name="Furnished" ColumnName="Furnished" />
+                <ScalarProperty Name="locality" ColumnName="locality" />
+                <ScalarProperty Name="priceispcm" ColumnName="priceispcm" />
+                <ScalarProperty Name="displayprice" ColumnName="displayprice" />
+                <ScalarProperty Name="displayaddress" ColumnName="displayaddress" />
+                <ScalarProperty Name="vebra360" ColumnName="vebra360" />
+                <ScalarProperty Name="IsImported" ColumnName="IsImported" />
+                <ScalarProperty Name="isNew" ColumnName="isNew" />
+                <ScalarProperty Name="LetDeposit" ColumnName="LetDeposit" />
+                <ScalarProperty Name="LetAgencyFee" ColumnName="LetAgencyFee" />
+                <ScalarProperty Name="FixedDeposit" ColumnName="FixedDeposit" />
+                <ScalarProperty Name="EPCEnergyCurrent" ColumnName="EPCEnergyCurrent" />
+                <ScalarProperty Name="EPCEnergyPotential" ColumnName="EPCEnergyPotential" />
+                <ScalarProperty Name="EPCCo2Current" ColumnName="EPCCo2Current" />
+                <ScalarProperty Name="EPCCo2Potential" ColumnName="EPCCo2Potential" />
+                <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DoNotExport" ColumnName="DoNotExport" />
+                <ScalarProperty Name="DoNotImportData" ColumnName="DoNotImportData" />
+                <ScalarProperty Name="PropertyEndDate" ColumnName="PropertyEndDate" />
+                <ScalarProperty Name="Portfolio" ColumnName="Portfolio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyEstateTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyEstateType">
+              <MappingFragment StoreEntitySet="PropertyEstateTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="PropertyTypeId" ColumnName="PropertyTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyFiles">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyFile">
+              <MappingFragment StoreEntitySet="PropertyFiles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
+                <ScalarProperty Name="originalfilename" ColumnName="originalfilename" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="caption" ColumnName="caption" />
+                <ScalarProperty Name="dateupdated" ColumnName="dateupdated" />
+                <ScalarProperty Name="dateadded" ColumnName="dateadded" />
+                <ScalarProperty Name="VebraURL" ColumnName="VebraURL" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="IsImported" ColumnName="IsImported" />
+                <ScalarProperty Name="importedsource" ColumnName="importedsource" />
+                <ScalarProperty Name="FileExistOnFeed" ColumnName="FileExistOnFeed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyFileTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyFileType">
+              <MappingFragment StoreEntitySet="PropertyFileType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="vebraid" ColumnName="vebraid" />
+                <ScalarProperty Name="filetype" ColumnName="filetype" />
+                <ScalarProperty Name="download" ColumnName="download" />
+                <ScalarProperty Name="ExpertAgentFileType" ColumnName="ExpertAgentFileType" />
+                <ScalarProperty Name="ExpertAgentID" ColumnName="ExpertAgentID" />
+                <ScalarProperty Name="RightMoveID" ColumnName="RightMoveID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyImages">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyImage">
+              <MappingFragment StoreEntitySet="PropertyImages">
+                <ScalarProperty Name="imageid" ColumnName="imageid" />
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyImageTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyImageType">
+              <MappingFragment StoreEntitySet="PropertyImageType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="vebraid" ColumnName="vebraid" />
+                <ScalarProperty Name="imagetype" ColumnName="imagetype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyImportProcesses">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyImportProcess">
+              <MappingFragment StoreEntitySet="PropertyImportProcesses">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ImportSourse" ColumnName="ImportSourse" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="IsRunning" ColumnName="IsRunning" />
+                <ScalarProperty Name="IsManualProcess" ColumnName="IsManualProcess" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyLettingSpecifications">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyLettingSpecification">
+              <MappingFragment StoreEntitySet="PropertyLettingSpecifications">
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="specificationid" ColumnName="specificationid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyOptions">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyOption">
+              <MappingFragment StoreEntitySet="PropertyOptions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="Options" ColumnName="Options" />
+                <ScalarProperty Name="MetricSize" ColumnName="MetricSize" />
+                <ScalarProperty Name="Optiontype" ColumnName="Optiontype" />
+                <ScalarProperty Name="IsImported" ColumnName="IsImported" />
+                <ScalarProperty Name="importedsource" ColumnName="importedsource" />
+                <ScalarProperty Name="FieldId" ColumnName="FieldId" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyRooms">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyRoom">
+              <MappingFragment StoreEntitySet="PropertyRooms">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="imperial" ColumnName="imperial" />
+                <ScalarProperty Name="metric" ColumnName="metric" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="dimensions" ColumnName="dimensions" />
+                <ScalarProperty Name="fileindex" ColumnName="fileindex" />
+                <ScalarProperty Name="isImported" ColumnName="isImported" />
+                <ScalarProperty Name="importedsource" ColumnName="importedsource" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyStatus">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyStatu">
+              <MappingFragment StoreEntitySet="PropertyStatus">
+                <ScalarProperty Name="propertystatusid" ColumnName="propertystatusid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="catid" ColumnName="catid" />
+                <ScalarProperty Name="vebraid" ColumnName="vebraid" />
+                <ScalarProperty Name="ExpertAgentID" ColumnName="ExpertAgentID" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="RightmoveStatus" ColumnName="RightmoveStatus" />
+                <ScalarProperty Name="ZooplaStatus" ColumnName="ZooplaStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyStyles">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyStyle">
+              <MappingFragment StoreEntitySet="PropertyStyles">
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="styleid" ColumnName="styleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertySurveys">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertySurvey">
+              <MappingFragment StoreEntitySet="PropertySurvey">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Forename" ColumnName="Forename" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="BesttimeToCall" ColumnName="BesttimeToCall" />
+                <ScalarProperty Name="AlternativeTelephone" ColumnName="AlternativeTelephone" />
+                <ScalarProperty Name="BesttimeToCall1" ColumnName="BesttimeToCall1" />
+                <ScalarProperty Name="Mobilenumber" ColumnName="Mobilenumber" />
+                <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
+                <ScalarProperty Name="PropertyAge" ColumnName="PropertyAge" />
+                <ScalarProperty Name="PropertyPrice" ColumnName="PropertyPrice" />
+                <ScalarProperty Name="Bedrooms" ColumnName="Bedrooms" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Valuation" ColumnName="Valuation" />
+                <ScalarProperty Name="Survey" ColumnName="Survey" />
+                <ScalarProperty Name="EPC" ColumnName="EPC" />
+                <ScalarProperty Name="OfficeId" ColumnName="OfficeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyTypeGroups">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyTypeGroup">
+              <MappingFragment StoreEntitySet="PropertyTypeGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="IsSale" ColumnName="IsSale" />
+                <ScalarProperty Name="IsLet" ColumnName="IsLet" />
+                <ScalarProperty Name="IsNewHomes" ColumnName="IsNewHomes" />
+                <ScalarProperty Name="IsInvestment" ColumnName="IsInvestment" />
+                <ScalarProperty Name="SubType" ColumnName="SubType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.PropertyType">
+              <MappingFragment StoreEntitySet="PropertyTypes">
+                <ScalarProperty Name="propertytypeid" ColumnName="propertytypeid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Typeid" ColumnName="Typeid" />
+                <ScalarProperty Name="groupid1" ColumnName="groupid1" />
+                <ScalarProperty Name="groupid2" ColumnName="groupid2" />
+                <ScalarProperty Name="groupid3" ColumnName="groupid3" />
+                <ScalarProperty Name="isClientType" ColumnName="isClientType" />
+                <ScalarProperty Name="RightMoveID" ColumnName="RightMoveID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.Region">
+              <MappingFragment StoreEntitySet="Regions">
+                <ScalarProperty Name="regionid" ColumnName="regionid" />
+                <ScalarProperty Name="region1" ColumnName="region" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="zdescription" ColumnName="zdescription" />
+                <ScalarProperty Name="zimage" ColumnName="zimage" />
+                <ScalarProperty Name="zhits" ColumnName="zhits" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shortlists">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.Shortlist">
+              <MappingFragment StoreEntitySet="Shortlist">
+                <ScalarProperty Name="vipid" ColumnName="vipid" />
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trackings">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.Tracking">
+              <MappingFragment StoreEntitySet="Tracking">
+                <ScalarProperty Name="trackingid" ColumnName="trackingid" />
+                <ScalarProperty Name="trackingtypeid" ColumnName="trackingtypeid" />
+                <ScalarProperty Name="propertyid" ColumnName="propertyid" />
+                <ScalarProperty Name="vipid" ColumnName="vipid" />
+                <ScalarProperty Name="trackingdate" ColumnName="trackingdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrackingTypes">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.TrackingType">
+              <MappingFragment StoreEntitySet="TrackingTypes">
+                <ScalarProperty Name="trackingtypeid" ColumnName="trackingtypeid" />
+                <ScalarProperty Name="trackingtype1" ColumnName="trackingtype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WindowCards">
+            <EntityTypeMapping TypeName="WaltonPropertiesModel.WindowCard">
+              <MappingFragment StoreEntitySet="WindowCards">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="FooterText" ColumnName="FooterText" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="Template" ColumnName="Template" />
+                <ScalarProperty Name="BackGroundImage" ColumnName="BackGroundImage" />
+                <ScalarProperty Name="PropertyImage" ColumnName="PropertyImage" />
+                <ScalarProperty Name="ShortlistKey" ColumnName="ShortlistKey" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

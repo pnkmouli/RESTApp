@@ -5,8 +5,8 @@ using System.Net.Http;
 using System.Text;
 using System.Web.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApplication1;
-using WebApplication1.Controllers;
+using App;
+using App.Controllers;
 
 namespace RestApp.Tests.Controllers
 {
